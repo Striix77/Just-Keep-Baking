@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerInventory : MonoBehaviour
 
     public List<PlayerSlot> items = new List<PlayerSlot>();
     public int maxSlots = 10;
+    public TextMeshProUGUI inventoryItemsDisplay;
 
     public bool AddItem(ItemSO newItem, int quantity)
     {
@@ -76,5 +78,17 @@ public class PlayerInventory : MonoBehaviour
         return index != -1 && items[index].quantity >= amount;
     }
 
+
+    void Update()
+    {
+        if (inventoryItemsDisplay != null)
+        {
+            inventoryItemsDisplay.text = "";
+            foreach (var slot in items)
+            {
+                inventoryItemsDisplay.text += $"{slot.item.itemName} x{slot.quantity}{slot.item.unitOfMeasure}\n";
+            }
+        }
+    }
 
 }

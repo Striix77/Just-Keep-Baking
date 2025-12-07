@@ -8,6 +8,7 @@ public class ItemSO : ScriptableObject
     public string description;
     public int baseValue;
     public string category;
+    public string unitOfMeasure;
 
 
 }

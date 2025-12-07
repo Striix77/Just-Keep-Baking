@@ -17,3 +17,4 @@ MonoBehaviour:
   description: The heart and sould of any baked good.
   baseValue: 5
   category: Dry
+  unitOfMeasure: g
