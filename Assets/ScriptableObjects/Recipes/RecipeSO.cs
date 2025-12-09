@@ -7,6 +7,8 @@ public class RecipeSO : ScriptableObject
     public Sprite recipeIcon;
     public string description;
 
+    public GameObject resultPrefab;
+
 
     [System.Serializable]
     public struct Ingredient

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour
+[CreateAssetMenu(fileName = "New Player Inventory", menuName = "Inventory/Player Inventory")]
+public class PlayerInventory : ScriptableObject
 {
     [System.Serializable]
     public struct PlayerSlot
@@ -13,7 +14,6 @@ public class PlayerInventory : MonoBehaviour
 
     public List<PlayerSlot> items = new List<PlayerSlot>();
     public int maxSlots = 10;
-    public TextMeshProUGUI inventoryItemsDisplay;
 
     public bool AddItem(ItemSO newItem, int quantity)
     {
@@ -72,23 +72,16 @@ public class PlayerInventory : MonoBehaviour
         return false;
     }
 
-    public bool HasItem(ItemSO item, int amount)
+    public int GetIngredientQuantity(ItemSO item)
     {
-        int index = items.FindIndex(x => x.item == item);
-        return index != -1 && items[index].quantity >= amount;
-    }
-
-
-    void Update()
-    {
-        if (inventoryItemsDisplay != null)
+        for (int i = 0; i < items.Count; i++)
         {
-            inventoryItemsDisplay.text = "";
-            foreach (var slot in items)
+            if (items[i].item == item)
             {
-                inventoryItemsDisplay.text += $"{slot.item.itemName} x{slot.quantity}{slot.item.unitOfMeasure}\n";
+                return items[i].quantity;
             }
         }
-    }
 
+        return 0; // Item not found
+    }
 }

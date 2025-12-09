@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenInventory
   ingredients:
   - item: {fileID: 11400000, guid: d65b3828ebbdd5d4dbc5d2e4c744d3db, type: 2}
-    quantity: 1000
+    quantity: 850
   - item: {fileID: 11400000, guid: f6599d82aa7fd7748b14628d7ae6aa0d, type: 2}
     quantity: 1000
   - item: {fileID: 11400000, guid: 1818cf9e287ed4f4080b3ab21ec4eb07, type: 2}

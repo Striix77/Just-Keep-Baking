@@ -15,6 +15,7 @@ MonoBehaviour:
   recipeName: ChocolateChipCookies
   recipeIcon: {fileID: 0}
   description: 
+  resultPrefab: {fileID: 3585895149094783923, guid: 0d52d303d7ee24741934d59512caca45, type: 3}
   ingredients:
   - item: {fileID: 11400000, guid: d65b3828ebbdd5d4dbc5d2e4c744d3db, type: 2}
     quantity: 200

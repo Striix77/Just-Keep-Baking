@@ -9,6 +9,7 @@ public class KitchenItemInteraction : Interactable
 
     protected override void Interact()
     {
+
         if (kitchenInventory.GetIngredientQuantity(kitchenItem) >= quantity)
         {
             bool removed = kitchenInventory.RemoveIngredient(kitchenItem, quantity);
